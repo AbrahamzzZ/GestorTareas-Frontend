@@ -1,7 +1,7 @@
 # Frontend       
  - Clonar el repositorio
     git clone https://github.com/AbrahamzzZ/GestorTareas-Frontend        
-    cd Backend
+    cd Frontend
 
 - Instalar dependencias
     npm install
