@@ -9,4 +9,4 @@
 - Levantar el proyecto
     ng s
 
-  - Te creas un usuario y con eso entras a la aplicación
+- Te creas un usuario y con eso entras a la aplicación
