@@ -1,13 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Task } from '../interface/task';
+import { Task, UpdateTaskDto } from '../interface/task';
 
 @Injectable({
   providedIn: 'root',
 })
 export class TaskService {
-  private readonly API_URL = 'http://localhost:3000/api/tasks';
+  private readonly API_URL = 'http://localhost:3000/tasks';
 
   constructor(private http: HttpClient) {}
 
@@ -23,8 +23,8 @@ export class TaskService {
     return this.http.post<Task>(this.API_URL, data);
   }
 
-  updateTask(id: string, data: Task): Observable<Task> {
-    return this.http.put<Task>(`${this.API_URL}/${id}`, data);
+  updateTask(id: string, data: UpdateTaskDto): Observable<UpdateTaskDto> {
+    return this.http.put<UpdateTaskDto>(`${this.API_URL}/${id}`, data);
   }
 
   deleteTask(id: string): Observable<void> {
