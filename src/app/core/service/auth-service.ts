@@ -8,7 +8,7 @@ import { AuthResponse } from '../interface/token';
   providedIn: 'root',
 })
 export class AuthService {
-  private readonly API_URL = 'http://localhost:3000/api/auth';
+  private readonly API_URL = 'http://localhost:3000/auth';
 
   constructor(private http: HttpClient) {}
 

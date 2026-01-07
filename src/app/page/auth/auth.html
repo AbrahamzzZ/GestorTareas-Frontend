@@ -1,1 +1,29 @@
-<p>auth works!</p>
+<div class="login-container">
+  <h2>Iniciar sesión</h2>
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+    <input
+      type="email"
+      placeholder="Email"
+      formControlName="email"
+    />
+
+    <input
+      type="password"
+      placeholder="Contraseña"
+      formControlName="password"
+    />
+
+    <button type="submit" [disabled]="loading">
+      {{ loading ? 'Ingresando...' : 'Ingresar' }}
+    </button>
+
+    @if(errorMessage){
+        <p class="error">{{ errorMessage }}</p>
+    }
+  </form>
+  <button mat-button type="button" class="register-btn" (click)="goToRegister()">
+    ¿No tienes cuenta? Regístrate
+  </button>
+</div>

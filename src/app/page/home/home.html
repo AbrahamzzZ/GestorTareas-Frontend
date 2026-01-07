@@ -1,0 +1,42 @@
+<div class="home-container">
+    <div class="header">
+        <h2>Mis tareas</h2>
+
+        <button mat-stroked-button color="warn" (click)="logout()">
+            <mat-icon>exit_to_app</mat-icon>Cerrar sesión
+        </button>
+    </div>
+
+    <button mat-raised-button color="primary" (click)="openTaskModal()">
+        <mat-icon>add</mat-icon>Nueva Tarea
+    </button>
+
+    @if(loading){
+        <p>Cargando tareas...</p>
+    }
+
+    @for(task of tasks;track $index){
+        <mat-card class="task-card">
+
+            <div class="task-header">
+                <mat-checkbox
+                [checked]="task.completed"
+                (change)="toggleTask(task)">
+                </mat-checkbox>
+
+                <button
+                mat-icon-button
+                color="warn"
+                (click)="deleteTask(task.id)">
+                <mat-icon>delete</mat-icon>
+                </button>
+            </div>
+
+            <div [class.completed]="task.completed">
+                <h3>{{ task.title }}</h3>
+            </div>
+
+        </mat-card>
+    }
+    
+</div>
